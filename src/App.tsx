@@ -1,23 +1,18 @@
-import { useEffect, useState } from "react"
+import { SearchBar } from "./components/SearchBar";
+import { Time } from "./components/Time";
 
 export default function App() {
-
-  const [time, setTime] = useState(new Date());
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-  }, []);
 
   return (
     <>
 
-      <div className="min-h-screen grid items-center justify-center bg-slate-700">
-        <div className="xl:text-8xl text-5xl font-bold font-mono text-gray-800 bg-gray-100 p-4 rounded-xl">
-          <h1>
-            {time.getHours().toString().padStart(2, '0')} : {time.getMinutes().toString().padStart(2, '0')} : {time.getSeconds().toString().padStart(2, '0')}
-          </h1>
+      <div className="min-h-screen max-w-screen grid items-center justify-center bg-slate-700">
+        <div className="xl:text-8xl text-5xl font-mono text-gray-800 bg-gray-100 p-4 rounded-xl">
+          <Time />
+          <SearchBar />
+
         </div>
+
 
       </div>
     </>
